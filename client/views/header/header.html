@@ -1,0 +1,47 @@
+<template name="header">
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="{{ pathFor 'home' }}">
+            <img class="logo" src="{{ dict 'global.logo.url' }}" alt="{{ dict 'seo.title' }}" />
+          </a>
+        </div>
+        <div class="col-sm-9">
+          <ul class="tabs">
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
+                {{ dict 'menu.workTitle' }}
+              </a>
+              <ul class="dropdown-menu">
+                {{# each submenus }}
+                  <li><a href="{{ pathFor 'work.show' }}">{{ title }}</a></li>
+                {{/ each }}
+              </ul>
+            </li>
+            <li>
+              <a href="#">
+                {{ dict 'menu.clientsTitle' }}
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                {{ dict 'menu.publicationsTitle' }}
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                {{ dict 'menu.bioTitle' }}
+              </a>
+            </li>
+            <li>
+              <a href="#" class="contact-link">
+                {{ dict 'menu.contactTitle' }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

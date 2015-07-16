@@ -1,0 +1,30 @@
+.background-images {
+  position: fixed;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+
+  div {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+.layout-fade {
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.75;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}

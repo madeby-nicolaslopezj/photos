@@ -1,0 +1,39 @@
+.header {
+  border-bottom: 1px solid #fff;
+  font-family: 'loveloblack', sans-serif;
+
+  img.logo {
+    height: 93px;
+    margin-bottom: 4px;
+  }
+
+  .tabs {
+    text-align: right;
+
+    > li {
+      font-size: 16px;
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 40px 12px 0 12px;
+
+      > a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: rgb(31, 31, 33);
+      border-radius: 0;
+
+      a {
+          padding: 10px 20px;
+        color: #fff;
+        font-size: 14px;
+        &:hover {
+          background-color: lighten(rgb(31, 31, 33), 10%);
+        }
+      }
+    }
+  }
+}

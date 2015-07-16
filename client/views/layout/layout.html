@@ -1,0 +1,14 @@
+<template name="layout">
+  <div class="background-images">
+    {{# each images }}
+      <div style="background-image: url({{ image.url }}); opacity: {{ getOpacity }}"></div>
+    {{/ each }}
+  </div>
+  <div class="layout-fade" style="{{# if isActiveRoute 'home' }}opacity: 0{{/ if }}">
+
+  </div>
+  {{> header }}
+
+  {{> yield }}
+  {{> contact }}
+</template>
