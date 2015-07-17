@@ -1,5 +1,5 @@
 var getNext = function() {
-  var items = Publications.find({}, { sort: { createdAt: -1 } }).fetch();
+  var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(items, { _id: Router.current().params._id });
   var index = _.indexOf(items, current);
   if (index == -1) return;
@@ -9,7 +9,7 @@ var getNext = function() {
 }
 
 var getPrevious = function() {
-  var items = Publications.find({}, { sort: { createdAt: -1 } }).fetch();
+  var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(items, { _id: Router.current().params._id });
   var index = _.indexOf(items, current);
   if (index == -1) return;

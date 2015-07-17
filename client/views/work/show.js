@@ -15,7 +15,7 @@ Template.workShow.onRendered(function() {
   this.autorun(function() {
     var category = WorkSubmenus.findOne({ url: Router.current().params.url });
     if (!category) return;
-    var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1 } }).fetch();
+    var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1, _id: 1 } }).fetch();
     if (!works) return;
 
   	$(window).resize(function() {

@@ -6,7 +6,7 @@ Template.publicationsIndex.onCreated(function() {
 
 Template.publicationsIndex.onRendered(function() {
   this.autorun(function() {
-    var items = Publications.find({}, { sort: { createdAt: -1 } }).fetch();
+    var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
     if (!items) return;
 
   	$(window).resize(function() {
@@ -21,7 +21,6 @@ Template.publicationsIndex.onRendered(function() {
           return { width: item.image.info.width, height: item.image.info.height };
         },
         template: function(data, index) {
-          console.log(this);
           return '<div class="photo-container" style="height:' + data.displayHeight + 'px;margin-right:' + data.marginRight + 'px;">' +
               '<div data-id="' + data._id + '" class="image-rollover"><p>' + data.description + '</p></div>' +
               '<img class="image-thumb" src="' + data.src + '" style="width:' + data.displayWidth + 'px;height:' + data.displayHeight + 'px;" >' +

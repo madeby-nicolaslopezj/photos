@@ -5,7 +5,6 @@ SiteController = RouteController.extend({
 		if (!Meteor.isClient) {
 			return;
 		}
-    console.log('cacac saducansdfas ');
 		SEO.set({
 			title: orion.dictionary.get('seo.title'),
 			link: {
@@ -36,7 +35,31 @@ Router.route('/work/:url', {
 Router.route('/work/:url/:_id', {
   name: 'work.image',
 	layoutTemplate: null,
-  controller: 'SiteController'
+  controller: 'SiteController',
+	waitOn: function() {
+		return Meteor.subscribe('work', this.params._id);
+	},
+	onAfterAction: function() {
+		if (!Meteor.isClient) {
+			return;
+		}
+		var work = Works.findOne({ _id: this.params._id });
+		if (!work) return;
+		SEO.set({
+			title: orion.dictionary.get('seo.title'),
+			link: {
+				icon: orion.dictionary.get('seo.favIcon.url'),
+			},
+			meta: {
+				description: work.description || orion.dictionary.get('seo.description')
+			},
+			og: {
+				title: orion.dictionary.get('seo.title'),
+				description: work.description || orion.dictionary.get('seo.description'),
+				image: work.image.url
+			}
+		});
+	}
 });
 
 Router.route('/clients', {
@@ -52,7 +75,31 @@ Router.route('/publications', {
 Router.route('/publications/:_id', {
   name: 'publications.show',
 	layoutTemplate: null,
-  controller: 'SiteController'
+  controller: 'SiteController',
+	waitOn: function() {
+		return Meteor.subscribe('publication', this.params._id);
+	},
+	onAfterAction: function() {
+		if (!Meteor.isClient) {
+			return;
+		}
+		var publication = Publications.findOne({ _id: this.params._id });
+		if (!publication) return;
+		SEO.set({
+			title: orion.dictionary.get('seo.title'),
+			link: {
+				icon: orion.dictionary.get('seo.favIcon.url'),
+			},
+			meta: {
+				description: publication.description || orion.dictionary.get('seo.description')
+			},
+			og: {
+				title: orion.dictionary.get('seo.title'),
+				description: publication.description || orion.dictionary.get('seo.description'),
+				image: publication.image.url
+			}
+		});
+	}
 });
 
 Router.route('/bio', {

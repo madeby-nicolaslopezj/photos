@@ -1,7 +1,7 @@
 var getNext = function() {
   var category = WorkSubmenus.findOne({ url: Router.current().params.url });
   if (!category) return;
-  var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1 } }).fetch();
+  var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(works, { _id: Router.current().params._id });
   var index = _.indexOf(works, current);
   if (index == -1) return;
@@ -13,7 +13,7 @@ var getNext = function() {
 var getPrevious = function() {
   var category = WorkSubmenus.findOne({ url: Router.current().params.url });
   if (!category) return;
-  var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1 } }).fetch();
+  var works = Works.find({ categoryId: category._id }, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(works, { _id: Router.current().params._id });
   var index = _.indexOf(works, current);
   if (index == -1) return;
