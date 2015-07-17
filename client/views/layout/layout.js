@@ -6,7 +6,7 @@ var currentIndex = 0;
 var indexDep = new Tracker.Dependency();
 Meteor.setInterval(function() {
   currentIndex++;
-  if (currentIndex == BackgroundImages.find().count()) {
+  if (currentIndex >= BackgroundImages.find().count()) {
     currentIndex = 0;
   }
   indexDep.changed();

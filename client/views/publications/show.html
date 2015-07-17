@@ -1,9 +1,9 @@
-<template name="workImage">
+<template name="publicationsShow">
   <div class="gallery">
     <div class="hover-btn close-btn"></div>
     <div class="hover-btn right-btn {{# unless hasNext }}disabled{{/ unless }}"></div>
     <div class="hover-btn left-btn {{# unless hasPrevious }}disabled{{/ unless }}"></div>
-    {{# with work }}
+    {{# with publication }}
       <div class="current" style="background-image: url({{ image.url }})">
       </div>
       {{# if description }}

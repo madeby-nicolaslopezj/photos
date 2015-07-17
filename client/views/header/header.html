@@ -20,23 +20,29 @@
               </ul>
             </li>
             <li>
-              <a href="#">
+              <a href="{{ pathFor 'clients' }}">
                 {{ dict 'menu.clientsTitle' }}
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="{{ pathFor 'publications.index' }}">
                 {{ dict 'menu.publicationsTitle' }}
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="{{ pathFor 'bio' }}">
                 {{ dict 'menu.bioTitle' }}
               </a>
             </li>
             <li>
               <a href="#" class="contact-link">
                 {{ dict 'menu.contactTitle' }}
+              </a>
+            </li>
+            <li class="divider hidden-xs"></li>
+            <li class="hidden-xs">
+              <a href="{{ pathFor 'home' }}">
+                <i class="fa fa-home"></i>
               </a>
             </li>
           </ul>

@@ -10,9 +10,14 @@ orionjs:bootstrap
 orionjs:image-attribute
 orionjs:s3
 orionjs:relationships
+orionjs:froala
 email
 iron:router
 fourseven:scss
 twbs:bootstrap
 fortawesome:fontawesome
 micah:justified-gallery
+gadicohen:sitemaps
+meteorhacks:fast-render
+spiderable
+manuelschoebel:ms-seo

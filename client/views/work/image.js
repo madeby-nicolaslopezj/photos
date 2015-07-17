@@ -46,6 +46,10 @@ Template.workImage.helpers({
   },
   work: function() {
     return Works.findOne({ _id: Router.current().params._id });
+  },
+  currentUrl: function() {
+    Router.current();
+    return encodeURIComponent(window.location.href);
   }
 })
 

@@ -1,0 +1,24 @@
+<template name="bio">
+  <div class="bio">
+    <div class="container">
+      <div class="breads no-padding">
+        <span>
+          <a href="{{ pathFor 'home' }}"><i class="fa fa-home"></i></a>
+        </span>
+        <span><i class="fa fa-angle-right"></i></span>
+        <span class="current">
+          {{ dict 'menu.bioTitle' }}
+        </span>
+      </div>
+      <div class="row">
+        <div class="col-sm-7">
+          {{{ dict 'bio.text' }}}
+        </div>
+        <div class="col-sm-5">
+          <img src="{{ dict 'bio.image.url' }}" alt="Bio image" />
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+</template>

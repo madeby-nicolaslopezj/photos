@@ -1,0 +1,17 @@
+<template name="clients">
+  <div class="clients">
+    <div class="container-fluid">
+      <div class="breads">
+        <span>
+          <a href="{{ pathFor 'home' }}"><i class="fa fa-home"></i></a>
+        </span>
+        <span><i class="fa fa-angle-right"></i></span>
+        <span class="current">
+          {{ dict 'menu.clientsTitle' }}
+        </span>
+      </div>
+      <img class="image" src="{{ dict 'clients.image.url' }}" alt="Clients" />
+      <br><br>
+    </div>
+  </div>
+</template>
