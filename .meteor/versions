@@ -48,6 +48,7 @@ matb33:collection-hooks@0.7.13
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:inject-initial@1.0.2
+micah:justified-gallery@0.0.2
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3

@@ -2,5 +2,15 @@
   font-family: Roboto, Helvetica, Arial, sans-serif;
   color: #fff;
 
-  
+
+  .images {
+    margin-bottom: 20px;
+
+    .image-thumb {
+      cursor: pointer;
+      display: inline-block;
+      background-position: center;
+      background-size: cover;
+    }
+  }
 }

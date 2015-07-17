@@ -1,0 +1,111 @@
+.gallery {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1F1F21;
+
+  .current {
+    background-color: #1F1F21;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .description {
+    z-index: 105;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .dropup {
+    z-index: 106;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    right: 0;
+    padding: 4px 14px 12px 16px;
+    font-size: 20px;
+    a {
+      color: #fff;
+      img {
+        height: 20px;
+      }
+    }
+
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+      background-color: rgb(31, 31, 33);
+      border-radius: 0;
+
+      a {
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 14px;
+        &:hover {
+          background-color: lighten(rgb(31, 31, 33), 10%);
+        }
+        .fa {
+          margin-right: 15px;
+        }
+      }
+    }
+
+  }
+
+  .hover-btn {
+    z-index: 110;
+    position: fixed;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &.disabled {
+      opacity: 0.1 !important;
+      cursor: default;
+    }
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url(/close.png);
+  }
+
+  .right-btn {
+    top: 40%;
+    right: 10px;
+    height: 80px;
+    width: 60px;
+    background-image: url(/right.png);
+  }
+
+  .left-btn {
+    top: 40%;
+    left: 10px;
+    height: 80px;
+    width: 60px;
+    background-image: url(/left.png);
+  }
+
+}

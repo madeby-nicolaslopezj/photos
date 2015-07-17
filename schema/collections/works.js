@@ -7,7 +7,9 @@ Works = new orion.collection('works', {
   },
   tabular: {
     columns: [
-      { data: 'image', title: 'image' }
+      orion.attributeColumn('image', 'image', 'Image'),
+      orion.attributeColumn('hasOne', 'categoryId', 'Category'),
+      { data: 'description', title: 'Description' }
     ]
   }
 });
@@ -20,5 +22,10 @@ Works.attachSchema(new SimpleSchema({
     titleField: 'title',
     publicationName: 'works_hasOne_work_submenus'
   }),
-  image: orion.attribute('image')
+  image: orion.attribute('image'),
+  description: {
+    type: String,
+    optional: true
+  },
+  createdAt: orion.attribute('createdAt')
 }));
