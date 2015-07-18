@@ -34,8 +34,8 @@ Router.route('/work/:url', {
 
 Router.route('/work/:url/:_id', {
   name: 'work.image',
-	layoutTemplate: null,
-  controller: 'SiteController',
+	loadingTemplate: 'workImage',
+	fastRender: true,
 	waitOn: function() {
 		return Meteor.subscribe('work', this.params._id);
 	},
@@ -45,6 +45,7 @@ Router.route('/work/:url/:_id', {
 		}
 		var work = Works.findOne({ _id: this.params._id });
 		if (!work) return;
+		console.log(work);
 		SEO.set({
 			title: orion.dictionary.get('seo.title'),
 			link: {
@@ -74,8 +75,8 @@ Router.route('/publications', {
 
 Router.route('/publications/:_id', {
   name: 'publications.show',
-	layoutTemplate: null,
-  controller: 'SiteController',
+	loadingTemplate: 'publicationsShow',
+	fastRender: true,
 	waitOn: function() {
 		return Meteor.subscribe('publication', this.params._id);
 	},
