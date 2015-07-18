@@ -45,7 +45,6 @@ Router.route('/work/:url/:_id', {
 		}
 		var work = Works.findOne({ _id: this.params._id });
 		if (!work) return;
-		console.log(work);
 		SEO.set({
 			title: orion.dictionary.get('seo.title'),
 			link: {
