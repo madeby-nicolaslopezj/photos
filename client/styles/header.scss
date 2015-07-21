@@ -1,6 +1,7 @@
 .header {
   border-bottom: 1px solid #fff;
   font-family: 'loveloblack', sans-serif;
+
   @media (max-width: 767px) {
     text-align: center;
   }
@@ -24,6 +25,11 @@
       text-transform: uppercase;
       padding: 40px 12px 10px 12px;
 
+      @media (max-width: 767px) {
+        display: block;
+        padding: 10px 12px 10px 12px;
+      }
+
       &.divider {
         border-right: 1px solid #fff;
         margin-bottom: -41px;
@@ -37,6 +43,13 @@
 
       ul.dropdown-menu {
         margin-top: 0px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+          text-align: center;
+          position: relative;
+          margin-bottom: 30px;
+        }
       }
 
       > a {

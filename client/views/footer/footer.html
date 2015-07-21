@@ -1,0 +1,21 @@
+<template name="footer">
+  <div class="footer {{# if isActiveRoute 'home' }}on-home{{/ if }}">
+    <div class="container-fluid">
+      <span class="text">{{ dict 'footer.text' }}</span>
+      <ul class="social-icons">
+        <li>
+          <a href="{{ dict 'social.facebook' }}" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="{{ dict 'social.twitter' }}" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="{{ dict 'social.instagram' }}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="{{ dict 'social.linkedin' }}" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
