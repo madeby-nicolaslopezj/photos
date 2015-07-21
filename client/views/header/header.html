@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-9">
           <ul class="tabs">
-            <li class="dropdown">
+            <li class="dropdown {{ isActiveRoute regex='work' }}">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
                 {{ dict 'menu.workTitle' }}
               </a>
@@ -19,17 +19,17 @@
                 {{/ each }}
               </ul>
             </li>
-            <li>
+            <li class="{{ isActiveRoute regex='clients' }}">
               <a href="{{ pathFor 'clients' }}">
                 {{ dict 'menu.clientsTitle' }}
               </a>
             </li>
-            <li>
+            <li class="{{ isActiveRoute regex='publications' }}">
               <a href="{{ pathFor 'publications.index' }}">
                 {{ dict 'menu.publicationsTitle' }}
               </a>
             </li>
-            <li>
+            <li class="{{ isActiveRoute regex='bio' }}">
               <a href="{{ pathFor 'bio' }}">
                 {{ dict 'menu.bioTitle' }}
               </a>
@@ -51,7 +51,7 @@
     </div>
   </div>
   <style media="screen">
-    .header .tabs > li > a:hover {
+    .header .tabs > li > a:hover, .header .tabs > li.active > a {
       color: {{ dict 'menu.hoverColor' }};
     }
   </style>
