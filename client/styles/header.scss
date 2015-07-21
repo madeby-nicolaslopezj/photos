@@ -53,7 +53,7 @@
         padding: 10px 20px;
         color: #fff;
         font-size: 14px;
-        &:hover {
+        &:hover, &:focus {
           background-color: lighten(rgb(31, 31, 33), 10%);
         }
       }
