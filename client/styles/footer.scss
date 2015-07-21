@@ -1,20 +1,26 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  @media (max-width: 767px) {
+    margin-bottom: 100px;
+  }
+}
+
 .footer {
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  position: relative;
+  position: absolute;
   width: 100%;
   bottom: 0;
+  display: block;
 
   @media (max-width: 767px) {
     text-align: center;
   }
 
-  &.on-home {
-    position: fixed;
-    @media (max-width: 767px) {
-      margin-top: 40px;
-      position: relative;
-    }
-  }
 
   .text {
     margin-top: 5px;
