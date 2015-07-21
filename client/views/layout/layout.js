@@ -1,5 +1,9 @@
 Template.layout.onCreated(function() {
   this.subscribe('background-images');
+});
+
+Template.layout.onRendered(function() {
+  $('body').on('contextmenu', 'img', function(e){ return false; });
 })
 
 var currentIndex = 0;
