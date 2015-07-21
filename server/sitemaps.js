@@ -54,24 +54,4 @@ sitemaps.add('/sitemap.xml', function() {
   });
 
   return items;
-
-  var posts = orion.entities.posts.collection.find().forEach(function (post) {
-    var item = {
-      page: Router.path('blog.show', post),
-      lastmod: post.updatedAt || post.createdAt,
-      changefreq: 'weekly'
-    };
-
-    if (post.image && post.image.link) {
-      item.images = [{
-        loc: post.image.link,
-        caption: post.preview,
-        title: post.title
-      }]
-    }
-
-    items.push(item);
-  });
-
-  return items;
 });

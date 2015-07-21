@@ -1,4 +1,4 @@
-var cellHeight = 240;
+var cellHeight = 220;
 
 Template.workShow.onCreated(function() {
   var self = this;
@@ -21,8 +21,8 @@ Template.workShow.onRendered(function() {
   	$(window).resize(function() {
       $('.images').empty().justifiedImages({
         images: works,
-        rowHeight: 200,
-        maxRowHeight: 400,
+        rowHeight: cellHeight,
+        maxRowHeight: cellHeight + 30,
         thumbnailPath: function(work, width, height) {
           return work.image.url;
         },

@@ -5,6 +5,8 @@ Template.layout.onCreated(function() {
 var currentIndex = 0;
 var indexDep = new Tracker.Dependency();
 Meteor.setInterval(function() {
+  if (Router.current().route.getName() != 'home') return;
+
   currentIndex++;
   if (currentIndex >= BackgroundImages.find().count()) {
     currentIndex = 0;

@@ -19,7 +19,13 @@
             </div>
             <div class="row">
               <div class="col-sm-3">
-                <img src="{{ dict 'contact.image.url' }}" alt="{{ dict 'contact.to' }}" />
+                <div>
+                  <img src="{{ dict 'contact.image.url' }}" alt="{{ dict 'contact.to' }}" />
+                </div>
+                <br>
+                <div>
+                  {{{ dict 'contact.text' }}}
+                </div>
               </div>
               <div class="col-sm-9">
                 {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContact" }}

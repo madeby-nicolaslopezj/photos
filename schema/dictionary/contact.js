@@ -21,3 +21,7 @@ orion.dictionary.addDefinition('email', 'contact', {
   regEx: SimpleSchema.RegEx.Email,
   defaultValue: 'nicolaslopezj@me.com'
 });
+
+orion.dictionary.addDefinition('text', 'contact',
+  orion.attribute('froala')
+);

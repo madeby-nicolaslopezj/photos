@@ -18,3 +18,10 @@ orion.dictionary.addDefinition('contactTitle', 'menu', {
   type: String,
   defaultValue: 'Contact'
 });
+orion.dictionary.addDefinition('hoverColor', 'menu', {
+  type: String,
+  defaultValue: '#000',
+  autoform: {
+    type: 'color'
+  }
+});

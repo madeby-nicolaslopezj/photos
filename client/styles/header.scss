@@ -22,13 +22,21 @@
       font-size: 16px;
       display: inline-block;
       text-transform: uppercase;
-      padding: 40px 12px 0 12px;
+      padding: 40px 12px 10px 12px;
 
       &.divider {
         border-right: 1px solid #fff;
         margin-bottom: -41px;
         margin-right: 12px;
         height: 97px;
+      }
+
+      &.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+
+      ul.dropdown-menu {
+        margin-top: 0px;
       }
 
       > a {

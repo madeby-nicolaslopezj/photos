@@ -1,3 +1,5 @@
+$text-color: darken(#fff, 85%);
+
 .contact {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   background-color: rgba(0, 0, 0, 0.9);
@@ -25,9 +27,9 @@
     box-shadow: 0 0 12px 4px rgba(0,0,0,.12);
     border-width: 1px;
     border-style: solid;
-    background-color: #242528;
+    background-color: #fff;
     border-color: #2c2e31;
-    color: #989ba2;
+    color: $text-color;
 
     .content {
       padding: 24px;
@@ -49,19 +51,19 @@
 
       .cancel-col {
         border-top-right: 1px;
-        border-color: #34363a;
-        background-color: #242528;
-        color: #989ba2;
+        border-color: darken(#fff, 10%);
+        background-color: darken(#fff, 8%);
+        color: $text-color;
         &:hover {
-          background-color: lighten(#242528, 5%);
+          background-color: darken(#fff, 5%);
         }
       }
       .send-col {
-        border-color: #3c3e43;
-        background-color: #34363a;
-        color: #cdcfd2;
+        border-color: darken(#fff, 10%);
+        background-color: darken(#fff, 12%);
+        color: $text-color;
         &:hover {
-          background-color: lighten(#34363a, 5%);
+          background-color: darken(#fff, 6%);
         }
       }
     }
@@ -71,13 +73,13 @@
     font-weight: 400;
     .form-control {
       border-radius: 0;
-      color: #ffffff;
-      background-color: #242528;
-      border-color: #34363a;
+      color: $text-color;
+      background-color: darken(#fff, 10%);
+      border-color: darken(#fff, 14%);
       box-shadow: none;
 
       &:focus {
-        background-color: lighten(#242528, 5%);
+        background-color: darken(#fff, 4%);
       }
     }
     .has-error {

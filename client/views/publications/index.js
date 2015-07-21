@@ -1,4 +1,4 @@
-var cellHeight = 240;
+var cellHeight = 220;
 
 Template.publicationsIndex.onCreated(function() {
   this.subscribe('publications');
@@ -12,8 +12,8 @@ Template.publicationsIndex.onRendered(function() {
   	$(window).resize(function() {
       $('.images').empty().justifiedImages({
         images: items,
-        rowHeight: 200,
-        maxRowHeight: 400,
+        rowHeight: cellHeight,
+        maxRowHeight: cellHeight + 30,
         thumbnailPath: function(item, width, height) {
           return item.image.url;
         },
