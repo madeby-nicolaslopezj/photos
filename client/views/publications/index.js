@@ -1,12 +1,12 @@
-var cellHeight = 220;
+var cellHeight = 300;
 
 Template.publicationsIndex.onCreated(function() {
-  this.subscribe('publications');
+  this.subscribe('publications_top');
 })
 
 Template.publicationsIndex.onRendered(function() {
   this.autorun(function() {
-    var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
+    var items = PublicationsTop.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
     if (!items) return;
 
   	$(window).resize(function() {
@@ -36,6 +36,6 @@ Template.publicationsIndex.onRendered(function() {
 Template.publicationsIndex.events({
   'click .image-rollover': function(event, template) {
     var id = $(event.currentTarget).attr('data-id');
-    Router.go('publications.show', { _id: id });
+    Router.go('publications.top', { _id: id });
   }
 })

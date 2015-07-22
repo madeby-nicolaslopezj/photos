@@ -73,6 +73,11 @@ Router.route('/publications', {
 });
 
 Router.route('/publications/:_id', {
+  name: 'publications.top',
+  controller: 'SiteController'
+});
+
+Router.route('/publications-item/:_id', {
   name: 'publications.show',
 	loadingTemplate: 'publicationsShow',
 	fastRender: true,

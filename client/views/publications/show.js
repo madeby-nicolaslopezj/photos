@@ -1,5 +1,7 @@
 var getNext = function() {
-  var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
+  var _current = Publications.findOne({ _id: Router.current().params._id });
+  if (!_current) return;
+  var items = Publications.find({ parentId: _current.parentId }, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(items, { _id: Router.current().params._id });
   var index = _.indexOf(items, current);
   if (index == -1) return;
@@ -9,7 +11,9 @@ var getNext = function() {
 }
 
 var getPrevious = function() {
-  var items = Publications.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
+  var _current = Publications.findOne({ _id: Router.current().params._id });
+  if (!_current) return;
+  var items = Publications.find({ parentId: _current.parentId }, { sort: { createdAt: -1, _id: 1 } }).fetch();
   var current = _.findWhere(items, { _id: Router.current().params._id });
   var index = _.indexOf(items, current);
   if (index == -1) return;
@@ -19,7 +23,7 @@ var getPrevious = function() {
 }
 
 Template.publicationsShow.onCreated(function() {
-  this.subscribe('publications');
+  this.subscribe('publications_all');
 });
 
 Template.publicationsShow.onRendered(function() {
@@ -44,7 +48,8 @@ Template.publicationsShow.helpers({
 
 Template.publicationsShow.events({
   'click .close-btn': function() {
-    Router.go('publications.index');
+    var current = Publications.findOne({ _id: Router.current().params._id });
+    Router.go('publications.top', { _id: current.parentId });
   },
   'click .right-btn': function() {
     if (!getNext()) return;

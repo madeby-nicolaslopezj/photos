@@ -1,9 +1,17 @@
-Publications = new orion.collection('publications', {
+if (Meteor.isClient) {
+  orion.links.add({
+    identifier: 'publications',
+    title: 'Publications',
+    index: 50
+  });
+}
+PublicationsTop = new orion.collection('publications_top', {
   singularName: 'publication',
   pluralName: 'publications',
-  title: 'Publications',
+  title: 'Top',
   link: {
-    title: 'Publications'
+    title: 'Top',
+    parent: 'publications'
   },
   tabular: {
     columns: [
@@ -13,7 +21,7 @@ Publications = new orion.collection('publications', {
   }
 });
 
-Publications.attachSchema(new SimpleSchema({
+PublicationsTop.attachSchema(new SimpleSchema({
   image: orion.attribute('image'),
   description: {
     type: String
