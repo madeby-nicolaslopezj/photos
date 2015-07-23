@@ -10,7 +10,13 @@
           {{ dict 'menu.publicationsTitle' }}
         </span>
       </div>
-      <div class="images">
+      <div class="images row">
+        {{# each images }}
+          <a href="{{ pathFor 'publications.show' _id=getFirstId }}" class="col-sm-4">
+            <div class="image-item" style="background-image:url({{ image.url }})"></div>
+            <div class="image-rollover"><p>{{ description }}</p></div>
+          </a>
+        {{/ each }}
       </div>
     </div>
   </div>

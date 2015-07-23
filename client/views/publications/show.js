@@ -49,7 +49,7 @@ Template.publicationsShow.helpers({
 Template.publicationsShow.events({
   'click .close-btn': function() {
     var current = Publications.findOne({ _id: Router.current().params._id });
-    Router.go('publications.top', { _id: current.parentId });
+    Router.go('publications.index');
   },
   'click .right-btn': function() {
     if (!getNext()) return;

@@ -2,40 +2,15 @@ var cellHeight = 300;
 
 Template.publicationsIndex.onCreated(function() {
   this.subscribe('publications_top');
+  this.subscribe('publications_all');
 })
 
-Template.publicationsIndex.onRendered(function() {
-  this.autorun(function() {
-    var items = PublicationsTop.find({}, { sort: { createdAt: -1, _id: 1 } }).fetch();
-    if (!items) return;
-
-  	$(window).resize(function() {
-      $('.images').empty().justifiedImages({
-        images: items,
-        rowHeight: cellHeight,
-        maxRowHeight: cellHeight + 30,
-        thumbnailPath: function(item, width, height) {
-          return item.image.url;
-        },
-        getSize: function(item) {
-          return { width: item.image.info.width, height: item.image.info.height };
-        },
-        template: function(data, index) {
-          return '<div class="photo-container" style="height:' + data.displayHeight + 'px;margin-right:' + data.marginRight + 'px;">' +
-              '<div data-id="' + data._id + '" class="image-rollover"><p>' + data.description + '</p></div>' +
-              '<img class="image-thumb" src="' + data.src + '" style="width:' + data.displayWidth + 'px;height:' + data.displayHeight + 'px;" >' +
-              '</div>';
-        },
-        margin: 5
-      });
-    });
-    $(window).resize();
-  })
-})
-
-Template.publicationsIndex.events({
-  'click .image-rollover': function(event, template) {
-    var id = $(event.currentTarget).attr('data-id');
-    Router.go('publications.top', { _id: id });
+Template.publicationsIndex.helpers({
+  images: function() {
+    return PublicationsTop.find({}, { sort: { createdAt: -1, _id: 1 } });
+  },
+  getFirstId: function() {
+    var first = Publications.findOne({ parentId: this._id }, { sort: { createdAt: -1, _id: 1 } });
+    return first && first._id;
   }
 })

@@ -15,7 +15,13 @@
             {{ title }}
           </span>
         </div>
-        <div class="images">
+        <div class="images row">
+          {{# each images }}
+            <a href="{{ pathFor 'work.image' url=../url }}" class="col-sm-3">
+              <div class="image-item" style="background-image:url({{ image.url }})">
+              </div>
+            </a>
+          {{/ each }}
         </div>
       </div>
     </div>

@@ -3,14 +3,19 @@
   color: #fff;
 
 
-  .images {
-    margin-bottom: 20px;
+  .images.row {
+    margin: 0 5px;
 
-    .image-thumb {
-      cursor: pointer;
-      display: inline-block;
-      background-position: center;
+    .col-sm-3 {
+      padding: 0;
+    }
+
+    .image-item {
+      margin: 2px;
+      height: 220px;
       background-size: cover;
+      background-position: center;
     }
   }
+
 }
