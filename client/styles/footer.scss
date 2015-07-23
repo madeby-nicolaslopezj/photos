@@ -22,10 +22,11 @@ body {
   }
 
   .text {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 10px;
     color: #fff;
     float: right;
+    font-size: 12px;
 
     @media (max-width: 767px) {
       float: none;

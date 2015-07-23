@@ -7,7 +7,8 @@ BackgroundImages = new orion.collection('background_images', {
   },
   tabular: {
     columns: [
-      orion.attributeColumn('image', 'image', 'Image')
+      orion.attributeColumn('image', 'image', 'Image'),
+      {  title: 'Edit', render: function(val, type, doc) { return '<a class="btn btn-default btn-xs" href="' + Router.path('collections.background_images.update', doc) + '">Edit</a>' } }
     ]
   }
 });
