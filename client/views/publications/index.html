@@ -12,9 +12,11 @@
       </div>
       <div class="images row">
         {{# each images }}
-          <a href="{{ pathFor 'publications.show' _id=getFirstId }}" class="col-sm-4">
-            <div class="image-item" style="background-image:url({{ image.url }})"></div>
-            <div class="image-rollover"><p>{{ description }}</p></div>
+          <a href="{{ pathFor 'publications.show' _id=getFirstId }}">
+            <div class="col-sm-4">
+              <div class="image-item" style="background-image:url({{ image.url }})"></div>
+              <div class="image-rollover"><p>{{ description }}</p></div>
+            </div>
           </a>
         {{/ each }}
       </div>

@@ -7,6 +7,7 @@ Template.contact.onRendered(function() {
     if (visible) {
       $('.contact').css({ display: 'block' });
       Meteor.setTimeout(function() {
+        Session.set('emailSent', false);
         Session.set('real_contactOpacity', 1);
       }, 10);
     } else {

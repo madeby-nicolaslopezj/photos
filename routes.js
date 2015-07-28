@@ -29,7 +29,13 @@ Router.route('/', {
 
 Router.route('/work/:url', {
   name: 'work.show',
-  controller: 'SiteController'
+  controller: 'SiteController',
+	onAfterAction: function() {
+		if (!$('.work-show') || !$('.work-show').offset()) return;
+		$('html, body').animate({
+        scrollTop: $('.work-show').offset().top
+    }, 300);
+	}
 });
 
 Router.route('/work/:url/:_id', {

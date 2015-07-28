@@ -2,12 +2,12 @@
   <div class="header">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <a href="{{ pathFor 'home' }}">
             <img class="logo" src="{{ dict 'global.logo.url' }}" alt="{{ dict 'seo.title' }}" />
           </a>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-8">
           <ul class="tabs">
             <li class="dropdown {{ isActiveRoute regex='work' }}">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
@@ -39,8 +39,8 @@
                 {{ dict 'menu.contactTitle' }}
               </a>
             </li>
-            <li class="divider hidden-xs"></li>
-            <li class="hidden-xs">
+            <li class="divider hidden-xs hidden-sm"></li>
+            <li class="hidden-xs hidden-sm">
               <a href="{{ pathFor 'home' }}">
                 <i class="fa fa-home"></i>
               </a>
