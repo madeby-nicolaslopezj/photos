@@ -33,8 +33,8 @@ Router.route('/work/:url', {
 	onAfterAction: function() {
 		if (!$('.work-show') || !$('.work-show').offset()) return;
 		$('html, body').animate({
-        scrollTop: $('.work-show').offset().top
-    }, 300);
+        scrollTop: ($('.work-show').offset().top - 120)
+    }, 500);
 	}
 });
 

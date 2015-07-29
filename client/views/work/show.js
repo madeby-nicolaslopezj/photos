@@ -9,6 +9,16 @@ Template.workShow.onCreated(function() {
   })
 })
 
+Template.workShow.onRendered(function() {
+  this.autorun(function() {
+    if (Template.instance().subscriptionsReady()) {
+      $('html, body').animate({
+          scrollTop: ($('.work-show').offset().top - 120)
+      }, 500);
+    }
+  })
+})
+
 Template.workShow.helpers({
   category: function() {
     return WorkSubmenus.findOne({ url: Router.current().params.url });
