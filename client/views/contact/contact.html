@@ -1,58 +1,70 @@
 <template name="contact">
   <div class="contact" style="opacity: {{ getOpacity }};">
     <h1 class="title">{{ dict 'contact.title' }}</h1>
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <div class="box">
-          <div class="content">
-            {{# if emailSent }}
-            <p>
-              {{ dict 'contact.successMessage' }}
-            </p>
-            {{ else }}
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-3">
-                <p>
-                  {{ dict 'contact.toTitle' }}
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <div>
-                  <img src="{{ dict 'contact.image.url' }}" alt="{{ dict 'contact.to' }}" />
-                </div>
-                <br>
-                <div>
-                  {{{ dict 'contact.text' }}}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="box">
+            <div class="content">
+              {{# if emailSent }}
+              <p>
+                {{ dict 'contact.successMessage' }}
+              </p>
+              {{ else }}
+              <div class="row">
+                <div class="col-sm-8 col-sm-offset-3">
+                  <p>
+                    {{ dict 'contact.toTitle' }}
+                  </p>
                 </div>
               </div>
-              <div class="col-sm-9">
-                {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContact" }}
-                    {{> afQuickField name="title" }}
-                    {{> afQuickField name="email" }}
-                    {{> afQuickField name="message" rows=8 }}
-                {{/ autoForm }}
+              <div class="row">
+                <div class="col-sm-3">
+                  <div>
+                    <img src="{{ dict 'contact.image.url' }}" alt="{{ dict 'contact.to' }}" />
+                  </div>
+                  <br>
+                  <div>
+                    {{{ dict 'contact.text' }}}
+                  </div>
+                </div>
+                <div class="col-sm-9">
+                  {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContact" }}
+                      {{> afQuickField name="title" }}
+                      {{> afQuickField name="email" }}
+                      {{> afQuickField name="message" rows=8 }}
+                  {{/ autoForm }}
+                </div>
               </div>
+              {{/ if }}
             </div>
-            {{/ if }}
-          </div>
-          <div class="buttons row">
-            {{# if emailSent }}
-              <div class="col-sm-12 cancel-col">
-                Close
-              </div>
-            {{ else }}
-              <div class="col-sm-6 cancel-col">
-                Cancel
-              </div>
-              <div class="col-sm-6 send-col">
-                Send
-              </div>
-            {{/ if }}
+            <div class="buttons row">
+              {{# if emailSent }}
+                <div class="col-sm-12 cancel-col">
+                  Close
+                </div>
+              {{ else }}
+                <div class="col-sm-6 cancel-col">
+                  Cancel
+                </div>
+                <div class="col-sm-6 send-col">
+                  Send
+                </div>
+              {{/ if }}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  {{# if getOpacity }}
+    <style media="screen">
+      html, body {
+        overflow: hidden;
+      }
+      body {
+        position: relative;
+      }
+    </style>
+  {{/ if }}
 </template>
