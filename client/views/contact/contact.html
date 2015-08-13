@@ -1,5 +1,5 @@
 <template name="contact">
-  <div class="contact" style="opacity: {{ getOpacity }};">
+  <div class="contact scrollable" style="opacity: {{ getOpacity }};">
     <h1 class="title">{{ dict 'contact.title' }}</h1>
     <div class="container-fluid">
       <div class="row">
@@ -58,12 +58,13 @@
     </div>
   </div>
   {{# if getOpacity }}
-    <style media="screen">
+    <style>
       html, body {
         overflow: hidden;
       }
       body {
-        position: relative;
+        position: fixed;
+        width: 100%;
       }
     </style>
   {{/ if }}

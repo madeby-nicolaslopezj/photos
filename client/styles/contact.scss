@@ -13,6 +13,7 @@ $text-color: darken(#fff, 85%);
   -moz-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   z-index: 100;
 
   .title {

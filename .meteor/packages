@@ -13,6 +13,7 @@ orionjs:relationships
 orionjs:froala
 email
 iron:router
+zimme:active-route
 fourseven:scss
 twbs:bootstrap
 fortawesome:fontawesome
