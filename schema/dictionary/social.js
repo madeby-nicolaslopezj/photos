@@ -3,7 +3,7 @@ orion.dictionary.addDefinition('facebook', 'social', {
   regEx: SimpleSchema.RegEx.Url
 });
 
-orion.dictionary.addDefinition('twitter', 'social', {
+orion.dictionary.addDefinition('pinterest', 'social', {
   type: String,
   regEx: SimpleSchema.RegEx.Url
 });

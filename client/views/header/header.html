@@ -9,24 +9,19 @@
         </div>
         <div class="col-sm-8">
           <ul class="tabs">
-            <li class="dropdown {{ isActiveRoute regex='work' }}">
-              <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
-                {{ dict 'menu.workTitle' }}
-              </a>
-              <ul class="dropdown-menu">
-                {{# each submenus }}
-                  <li><a href="{{ pathFor 'work.show' }}">{{ title }}</a></li>
-                {{/ each }}
-              </ul>
-            </li>
-            <li class="{{ isActiveRoute regex='clients' }}">
-              <a href="{{ pathFor 'clients' }}">
-                {{ dict 'menu.clientsTitle' }}
-              </a>
-            </li>
-            <li class="{{ isActiveRoute regex='publications' }}">
-              <a href="{{ pathFor 'publications.index' }}">
+            <li class="{{ isActivePath regex='interiorismo' }}">
+              <a href="{{ pathFor 'publications.index' type='interiorismo' }}">
                 {{ dict 'menu.publicationsTitle' }}
+              </a>
+            </li>
+            <li class="{{ isActivePath regex='mobiliario' }}">
+              <a href="{{ pathFor 'publications.index' type='mobiliario' }}">
+                {{ dict 'menu.publicationsTitle' }}
+              </a>
+            </li>
+            <li class="{{ isActiveRoute regex='construction' }}">
+              <a href="{{ pathFor 'construction' }}">
+                {{ dict 'menu.constructionTitle' }}
               </a>
             </li>
             <li class="{{ isActiveRoute regex='bio' }}">
@@ -50,7 +45,10 @@
       </div>
     </div>
   </div>
-  <style media="screen">
+  <style>
+    .header{
+      background-color: {{ dict 'menu.backgroundColor' }};
+    }
     .header .tabs > li > a:hover, .header .tabs > li.active > a {
       color: {{ dict 'menu.hoverColor' }};
     }

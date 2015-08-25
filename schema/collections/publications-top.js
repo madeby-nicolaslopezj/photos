@@ -16,12 +16,20 @@ PublicationsTop = new orion.collection('publications_top', {
   tabular: {
     columns: [
       orion.attributeColumn('image', 'image', 'Image'),
-      { data: 'description', title: 'Description' }
+      { data: 'description', title: 'Description' },
+      { data: 'type', title: 'Tipo' }
     ]
   }
 });
 
 PublicationsTop.attachSchema(new SimpleSchema({
+  type: {
+    type: String,
+    allowedValues: ['interiorismo', 'mobiliario'],
+    autoform: {
+      noselect: true
+    }
+  },
   image: orion.attribute('image'),
   description: {
     type: String

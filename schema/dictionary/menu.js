@@ -1,7 +1,3 @@
-orion.dictionary.addDefinition('workTitle', 'menu', {
-  type: String,
-  defaultValue: 'Work'
-});
 orion.dictionary.addDefinition('clientsTitle', 'menu', {
   type: String,
   defaultValue: 'Clients'
@@ -9,6 +5,10 @@ orion.dictionary.addDefinition('clientsTitle', 'menu', {
 orion.dictionary.addDefinition('publicationsTitle', 'menu', {
   type: String,
   defaultValue: 'Publications'
+});
+orion.dictionary.addDefinition('constructionTitle', 'menu', {
+  type: String,
+  defaultValue: 'Construcción'
 });
 orion.dictionary.addDefinition('bioTitle', 'menu', {
   type: String,
@@ -18,9 +18,16 @@ orion.dictionary.addDefinition('contactTitle', 'menu', {
   type: String,
   defaultValue: 'Contact'
 });
+orion.dictionary.addDefinition('backgroundColor', 'menu', {
+  type: String,
+  defaultValue: '#000000',
+  autoform: {
+    type: 'color'
+  }
+});
 orion.dictionary.addDefinition('hoverColor', 'menu', {
   type: String,
-  defaultValue: '#000',
+  defaultValue: '#000000',
   autoform: {
     type: 'color'
   }

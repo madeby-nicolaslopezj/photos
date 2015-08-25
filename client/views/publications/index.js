@@ -7,7 +7,7 @@ Template.publicationsIndex.onCreated(function() {
 
 Template.publicationsIndex.helpers({
   images: function() {
-    return PublicationsTop.find({}, { sort: { createdAt: -1, _id: 1 } });
+    return PublicationsTop.find({ type: Router.current().params.type }, { sort: { createdAt: -1, _id: 1 } });
   },
   getFirstId: function() {
     var first = Publications.findOne({ parentId: this._id }, { sort: { createdAt: -1, _id: 1 } });
