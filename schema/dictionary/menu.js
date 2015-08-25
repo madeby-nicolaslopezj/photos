@@ -2,9 +2,13 @@ orion.dictionary.addDefinition('clientsTitle', 'menu', {
   type: String,
   defaultValue: 'Clients'
 });
-orion.dictionary.addDefinition('publicationsTitle', 'menu', {
+orion.dictionary.addDefinition('interiorismoTitle', 'menu', {
   type: String,
-  defaultValue: 'Publications'
+  defaultValue: 'Interiorismo'
+});
+orion.dictionary.addDefinition('mobiliarioTitle', 'menu', {
+  type: String,
+  defaultValue: 'Mobiliario'
 });
 orion.dictionary.addDefinition('constructionTitle', 'menu', {
   type: String,

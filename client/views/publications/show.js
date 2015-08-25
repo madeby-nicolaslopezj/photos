@@ -23,6 +23,7 @@ var getPrevious = function() {
 }
 
 Template.publicationsShow.onCreated(function() {
+  this.subscribe('publications_top');
   this.subscribe('publications_all');
 });
 
@@ -49,7 +50,8 @@ Template.publicationsShow.helpers({
 Template.publicationsShow.events({
   'click .close-btn': function() {
     var current = Publications.findOne({ _id: Router.current().params._id });
-    Router.go('publications.index');
+    var parent = PublicationsTop.findOne({ _id: current.parentId });
+    Router.go('publications.index', { type: parent.type });
   },
   'click .right-btn': function() {
     if (!getNext()) return;

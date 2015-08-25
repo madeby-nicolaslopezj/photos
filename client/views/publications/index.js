@@ -6,6 +6,9 @@ Template.publicationsIndex.onCreated(function() {
 })
 
 Template.publicationsIndex.helpers({
+  title: function() {
+    return orion.dictionary.get('menu.' + Router.current().params.type + 'Title');
+  },
   images: function() {
     return PublicationsTop.find({ type: Router.current().params.type }, { sort: { createdAt: -1, _id: 1 } });
   },

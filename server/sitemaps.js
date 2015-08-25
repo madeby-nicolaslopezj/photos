@@ -1,6 +1,6 @@
 sitemaps.add('/sitemap.xml', function() {
 
-  var basicRoutes = ['home', 'clients', 'publications.index', 'bio'];
+  var basicRoutes = ['home', 'clients', 'bio'];
 
   var items = [];
 
@@ -9,7 +9,19 @@ sitemaps.add('/sitemap.xml', function() {
       page: Router.path(routeName),
       lastmod: new Date(),
       changefreq: 'weekly',
-    })
+    });
+  });
+
+  items.push({
+    page: Router.path('publications.index', { type: 'interiorismo' }),
+    lastmod: new Date(),
+    changefreq: 'weekly',
+  });
+
+  items.push({
+    page: Router.path('publications.index', { type: 'mobiliario' }),
+    lastmod: new Date(),
+    changefreq: 'weekly',
   });
 
   Publications.find().forEach(function(publication) {
