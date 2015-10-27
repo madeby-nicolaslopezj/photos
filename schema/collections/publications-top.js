@@ -34,5 +34,8 @@ PublicationsTop.attachSchema(new SimpleSchema({
   description: {
     type: String
   },
+  description2: {
+    type: String
+  },
   createdAt: orion.attribute('createdAt')
 }));

@@ -15,7 +15,12 @@
           <a href="{{ pathFor 'publications.show' _id=getFirstId }}">
             <div class="col-sm-4">
               <div class="image-item" style="background-image:url({{ image.url }})"></div>
-              <div class="image-rollover"><p>{{ description }}</p></div>
+              <div class="image-rollover">
+                <p>
+                  {{ description }}<br>
+                  <span style="font-size: 14px; font-weight: 300">{{ description2 }}</span>
+                </p>
+              </div>
             </div>
           </a>
         {{/ each }}
