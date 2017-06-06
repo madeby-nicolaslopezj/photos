@@ -36,3 +36,4 @@ random
 ejson
 spacebars
 check
+iron:middleware-stack@1.1.0
